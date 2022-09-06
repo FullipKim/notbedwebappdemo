@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Timer Page</title>
+</head>
+<body onresize="escondeMenuMobile()">
+	<div class="responsive-nav">
+		
+		<nav class="menu-desktop">
+			<center>
+				<a href="index.html"><p>케어루틴 알리미</p></a>
+				<a href="http://192.168.1.164:8080/stream_simple.html"><p>CCTV 확인하기</p></a>
+				<a href="control.html"><p>베드 컨트롤러</p></a>	
+			</center>		
+		</nav>
+		
+		<div class="mobile">
+			<h1>⏱케어루틴 알리미</h1>
+		</div>
+	</div>
+	<div class="content-wrap">
+        <!-- Time goes here will be changed in the DOM -->
+		<h1>현재 시각</h1>
+        <span id='current-time'>현재 시각</span>
+
+        <!-- Alarm ringtones -->
+        <audio src="./audio/Digital Watch Alarm Long.mp3" id='timeover' ></audio>
+		<audio src="./audio/Spaceship Alarm.mp3" id='timeover2' ></audio>
+        
+        <!-- For setting Alarm -->
+        <section id='alarm-section'>
+            <div class="wakeup-div alarm-div" >
+            <span class="alarm-spans">1번 침대: </span>
+            <select id="wakeUpTimeSelector" class="selector">
+              <option value="1">1 AM - 2AM</option>
+              <option value="2">2 AM - 3AM</option>
+              <option value="3">3 AM - 4AM</option>
+              <option value="4">4 AM - 5AM</option>
+              <option value="5">5 AM - 6AM</option>
+              <option value="6">6 AM - 7AM</option>
+              <option value="7">7 AM - 8AM</option>
+              <option value="8" selected>8 AM - 9AM</option>
+              <option value="9">9 AM - 10AM</option>
+              <option value="10">10 AM - 11AM</option>
+              <option value="11">11 AM - 12PM</option>
+              <option value="12">12 PM - 1PM</option>
+              <option value="13">1 PM - 2PM</option>
+              <option value="14">2 PM - 3PM</option>
+              <option value="15">3 PM - 4PM</option>
+              <option value="16">4 PM - 5PM</option>
+              <option value="17">5 PM - 6PM</option>
+              <option value="18">6 PM - 7PM</option>
+              <option value="19">7 PM - 8PM</option>
+              <option value="20">8 PM - 9PM</option>
+              <option value="21">9 PM - 10PM</option>
+              <option value="22">10 PM - 11PM</option>
+              <option value="23">11 PM - 12AM</option>
+              <option value="24">12 AM - 1AM</option>
+            </select><br>
+            <button id='wakeup-button' class="alarm-button">1번 침대 알람예약</button>
+            <button id='stop-wakeup' class="alarm-button"> 1번 침대 케어확인</button>
+        </div>
+            
+        <div class="lunch-div alarm-div" >
+            <span class="alarm-spans">2번 침대: </span> 
+              <select id="lunchTimeSelector" class="selector">
+                <option value="1">1 AM - 2AM</option>
+                <option value="2">2 AM - 3AM</option>
+                <option value="3">3 AM - 4AM</option>
+                <option value="4">4 AM - 5AM</option>
+                <option value="5">5 AM - 6AM</option>
+                <option value="6">6 AM - 7AM</option>
+                <option value="7">7 AM - 8AM</option>
+                <option value="8">8 AM - 9AM</option>
+                <option value="9">9 AM - 10AM</option>
+                <option value="10">10 AM - 11AM</option>
+                <option value="11">11 AM - 12PM</option>
+                <option value="12">12 PM - 1PM</option>
+                <option value="13">1 PM - 2PM</option>
+                <option value="14">2 PM - 3PM</option>
+                <option value="15">3 PM - 4PM</option>
+                <option value="16">4 PM - 5PM</option>
+                <option value="17">5 PM - 6PM</option>
+                <option value="18">6 PM - 7PM</option>
+                <option value="19">7 PM - 8PM</option>
+                <option value="20" selected>8 PM - 9PM</option>
+                <option value="21">9 PM - 10PM</option>
+                <option value="22">10 PM - 11PM</option>
+                <option value="23">11 PM - 12AM</option>
+                <option value="24">12 AM - 1AM</option>
+              </select> <br>
+              <button id='lunch-button' class="alarm-button">2번 침대 알람예약</button>
+              <button id='stop-lunch' class="alarm-button">2번 침대 케어확인</button>
+            </div>
+        </section>
+
+
+	</div>
+    <!-- link javascript -->
+    <script src="main.js"></script>
+</body>
+</html>
